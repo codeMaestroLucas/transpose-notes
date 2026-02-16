@@ -1,0 +1,41 @@
+
+// Fontes locais (antes do Bootstrap para disponibilidade)
+@import "fonts";
+
+// Bootstrap
+@import "bootstrap/scss/bootstrap";
+
+// Componentes customizados
+@import "cards";
+
+// ============================================================
+// Base
+// ============================================================
+body {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
+
+// ============================================================
+// Botão PDF discreto
+// ============================================================
+.btn-pdf {
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in-out;
+
+    &:hover {
+        opacity: 1;
+        color: black;
+    }
+}
+
+// ============================================================
+// Print — regras globais
+// ============================================================
+@media print {
+    body {
+        background: #fff !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
