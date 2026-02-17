@@ -63,11 +63,11 @@
             width: 100%;
             height: 100%;
             display: table;
-            background-image: url('{{ public_path('assets/images/bg_pdf.jpeg') }}');
+            background-image: url('{{ public_path('assets/images/bg_pdf.png') }}');
             background-size: cover;
             background-position: center;
             background-repeat: no-repeat;
-        }
+        }GI
 
         .tone-page:last-child {
             page-break-after: auto;
