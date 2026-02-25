@@ -16,7 +16,7 @@ class MibMaior extends MusicalScale
 
     public function label(): string
     {
-        return 'Sax Alto, Clarinata Alto (Mib)';
+        return 'Sax Alto, Clarineta Alto (Mib)';
     }
 
     public function color(): string

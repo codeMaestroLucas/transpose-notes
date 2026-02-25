@@ -8,6 +8,16 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    css: {
+        preprocessorOptions: {
+            scss: {
+                // Silencia warnings vindos de dependências (Bootstrap dentro do node_modules)
+                quietDeps: true,
+                // Especifica quais avisos de depreciação devem ser ignorados no console
+                silenceDeprecations: ['import', 'global-builtin', 'color-functions', 'if-function', 'mixed-decls'],
+            },
+        },
+    },
     server: {
         watch: {
             ignored: ['**/storage/framework/views/**'],
