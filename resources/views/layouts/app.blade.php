@@ -95,7 +95,7 @@
         }
     </style>
 
-    @vite(['resources/scss/app.scss', 'resources/js/app.js'])
+    @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 <body style="background-image: url('{{ asset('assets/images/bg_site.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;">
     <div class="container-fluid py-4">

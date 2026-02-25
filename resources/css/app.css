@@ -1,11 +1,251 @@
-@import 'tailwindcss';
+/* Bootstrap */
+@import 'bootstrap/dist/css/bootstrap.css';
 
-@source '../../vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php';
-@source '../../storage/framework/views/*.php';
-@source '../**/*.blade.php';
-@source '../**/*.js';
+/* ============================================================
+   Base
+   ============================================================ */
+body {
+    background-color: #f8f9fa;
+    min-height: 100vh;
+}
 
-@theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
-        'Segoe UI Symbol', 'Noto Color Emoji';
+/* ============================================================
+   Botão PDF discreto
+   ============================================================ */
+.btn-pdf {
+    opacity: 0.6;
+    transition: opacity 0.3s ease-in-out;
+}
+
+.btn-pdf:hover {
+    opacity: 1;
+    color: black;
+}
+
+/* ============================================================
+   Print — regras globais
+   ============================================================ */
+@media print {
+    body {
+        background: #fff !important;
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+}
+
+/* ============================================================
+   Cards de tonalidade
+   O mesmo CSS se aplica às 3 tonalidades (Dó, Mib, Sib).
+   ============================================================ */
+
+/* ---------- Card container ---------- */
+.tone-card {
+    border-radius: 1rem;
+    border: 1.2px solid;
+    transition: box-shadow 0.2s ease;
+    height: 80vh !important;
+    display: flex;
+    flex-direction: column;
+    background: #f7fafa;
+}
+
+/* ---------- Header colorido ---------- */
+.tone-header {
+    border-radius: 0.85rem 0.85rem 0 0;
+    padding: 1rem 1.5rem;
+    color: black;
+    font-weight: 700;
+}
+
+/* ---------- Título da música (Chewy) ---------- */
+/* Estilo base compartilhado entre input (Dó) e display (Mib/Sib) */
+.song-title-input,
+.song-title-display {
+    font-family: 'Chewy';
+    font-size: 2.5rem;
+    color: black;
+    text-align: center;
+    font-weight: 400;
+    line-height: 1.2;
+    min-height: 3rem;
+}
+
+/* Input editável no card de Dó (textarea estilizado como título) */
+.song-title-input {
+    background: transparent;
+    color: #343a40;
+    border: none;
+    width: 100%;
+    outline: none;
+    padding: 0.25rem 0.5rem;
+    resize: none;
+    overflow: hidden;
+    line-height: 1.2;
+    min-height: 2.5rem;
+    word-wrap: break-word;
+}
+
+.song-title-input::placeholder {
+    color: rgba(0, 0, 0, 0.3);
+}
+
+/* ---------- Subtítulo: tonalidade + instrumentos (Bai Jamjuree) ---------- */
+.tone-subtitle {
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-size: 1.4rem;
+    font-weight: 500;
+    opacity: 0.85;
+    margin-top: 0.25rem;
+    color: #bb0d0d;
+}
+
+/* ---------- Display de notas (grande, para crianças) ---------- */
+.notes-display {
+    font-size: 2.5rem;
+    font-weight: 600;
+    min-height: 120px;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: start;
+    justify-content: center;
+    gap: 0.75rem;
+    padding: 1.5rem;
+}
+
+/* ---------- Linha de notas (preserva agrupamento do input) ---------- */
+.notes-line {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.2rem;
+    width: 100%;
+}
+
+/* Linha vazia = espaçador visual */
+.notes-line--empty {
+    height: 1.5rem;
+}
+
+/* ---------- Badge individual de nota (SN Pro) ---------- */
+.note-badge {
+    font-family: 'SN Pro', sans-serif;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 80px;
+    padding: 0.5rem 1rem;
+    border-radius: 0.75rem;
+    font-size: 2rem;
+    font-weight: 700;
+    color: black;
+}
+
+/* ============================================================
+   Card de Dó — input unificado (textarea oculta + badges)
+   ============================================================ */
+
+/* Área clicável que contém o editor ou os badges */
+.do-editable-area {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    cursor: text;
+    position: relative;
+}
+
+/* Textarea que aparece SOMENTE durante edição */
+.notes-input-inline {
+    font-family: 'SN Pro', sans-serif;
+    font-size: 1.6rem;
+    font-weight: 500;
+    padding: 1.5rem;
+    border: none;
+    border-radius: 0;
+    background: transparent;
+    resize: none;
+    outline: none;
+    flex: 1;
+    width: 100%;
+    text-align: center;
+    color: black;
+    letter-spacing: 0.05em;
+}
+
+.notes-input-inline::placeholder {
+    color: rgba(0, 0, 0, 0.25);
+    font-weight: 400;
+}
+
+/* ---------- Wrapper do modo edição ---------- */
+.editing-wrapper {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+/* ---------- Indicador de carregamento ---------- */
+.loading-indicator {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    width: 100%;
+    padding: 0.5rem 1rem;
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-size: 0.9rem;
+    color: #6c757d;
+}
+
+/* Versão dentro do modo edição (fixa no rodapé do textarea) */
+.loading-indicator--editing {
+    border-top: 1px solid rgba(0, 0, 0, 0.08);
+    padding: 0.4rem 1rem;
+}
+
+/* ---------- Indicador de digitação ---------- */
+.typing-indicator {
+    font-family: 'Bai Jamjuree', sans-serif;
+    font-size: 0.95rem;
+    color: #6c757d;
+    min-height: 1.5rem;
+    text-align: center;
+    padding-bottom: 0.5rem;
+}
+
+/* ============================================================
+   Print / PDF — Esconde inputs, mantém notas grandes e legíveis
+   ============================================================ */
+@media print {
+    .tone-card {
+        break-inside: avoid;
+        page-break-after: always;
+        border: none;
+        box-shadow: none;
+    }
+
+    .tone-card:last-child {
+        page-break-after: auto;
+    }
+
+    .notes-display {
+        font-size: 3rem;
+    }
+
+    .note-badge {
+        font-size: 2.5rem;
+        min-width: 100px;
+    }
+
+    /* Esconde elementos interativos */
+    .no-print,
+    .notes-input-inline,
+    .btn-pdf,
+    .typing-indicator,
+    .form-text,
+    .song-title-input,
+    nav,
+    footer {
+        display: none !important;
+    }
 }
