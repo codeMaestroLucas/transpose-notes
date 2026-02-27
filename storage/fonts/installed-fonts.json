@@ -1,13 +1,13 @@
 {
     "chewy": {
-        "normal": "chewy_normal_eeee1108ca0ccf59563828f4025e8e08"
+        "normal": "chewy_normal_6ab9b061e94c14ec0b2ca44d046080a9"
     },
     "bai jamjuree": {
-        "500": "\/Users\/lucassamuellemosrajao\/dev_projects\/php\/transpose-notes\/storage\/fonts\/bai_jamjuree_500_e9bd7c878ea0e135f1b67759a4268085",
-        "normal": "bai_jamjuree_normal_72fb8e2c77eebaba178c87e0ab0a4cf1"
+        "500": "bai_jamjuree_500_070d9788d23640192df658d9f12aaace",
+        "normal": "\/Users\/macbookair\/Library\/Mobile Documents\/com~apple~CloudDocs\/Projects\/php-projects\/transpose-notes\/storage\/fonts\/bai_jamjuree_normal_594b6051cf5cc11d3e11acf6d5c1d749"
     },
     "sn pro": {
-        "bold": "\/Users\/lucassamuellemosrajao\/dev_projects\/php\/transpose-notes\/storage\/fonts\/sn_pro_bold_62d5c103f5f141d09bd80be1b15d02af",
-        "normal": "sn_pro_normal_8db44410a2860ed7a82324c7906e20e6"
+        "bold": "sn_pro_bold_4e0be5f82d53eaa7735dc6e27ccee75d",
+        "normal": "\/Users\/macbookair\/Library\/Mobile Documents\/com~apple~CloudDocs\/Projects\/php-projects\/transpose-notes\/storage\/fonts\/sn_pro_normal_c1fdf75f068e642a64bbc1751b2be5d6"
     }
 }

@@ -89,6 +89,9 @@
             max-width: 80%;
             height: 70%;
             margin: 0 auto;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
 
         /* ---------- Header ---------- */
@@ -121,7 +124,10 @@
         /* ---------- Container de notas (corpo do card) ---------- */
         .notes-display {
             padding: 30px 20px;
-            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            flex-grow: 1;
         }
 
         /* ---------- Linha de notas ---------- */
@@ -137,15 +143,15 @@
         /* ---------- Badge de nota (SN Pro) ---------- */
         .note-badge {
             font-family: 'SN Pro', sans-serif;
-            display: inline-block;
-            min-width: 70px;
-            padding: 8px 14px;
-            border-radius: 12px;
-            font-size: 26px;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-width: 80px;
+            padding: 0.1rem 0.3rem;
+            border-radius: 0.75rem;
+            font-size: 2rem;
             font-weight: 700;
             color: black;
-            text-align: center;
-            margin: 4px 2px;
         }
 
         /* ---------- Sem notas ---------- */
