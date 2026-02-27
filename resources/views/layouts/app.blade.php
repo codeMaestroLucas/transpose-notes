@@ -1,10 +1,11 @@
 <!DOCTYPE html>
 <html lang="pt-BR" data-bs-theme="light">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="csrf-token" content="{{ csrf_token() }}">
-    <title>@yield('title', 'Transpositor de Notas')</title>
+    <title>@yield('title', 'Symphony Lab')</title>
 
     {{-- Alpine.js via CDN --}}
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
@@ -28,6 +29,7 @@
             font-style: normal;
             font-display: swap;
         }
+
         @font-face {
             font-family: 'Bai Jamjuree';
             src: url('{{ asset('fonts/Bai_Jamjuree/BaiJamjuree-Medium.ttf') }}') format('truetype');
@@ -35,6 +37,7 @@
             font-style: normal;
             font-display: swap;
         }
+
         @font-face {
             font-family: 'Bai Jamjuree';
             src: url('{{ asset('fonts/Bai_Jamjuree/BaiJamjuree-SemiBold.ttf') }}') format('truetype');
@@ -42,6 +45,7 @@
             font-style: normal;
             font-display: swap;
         }
+
         @font-face {
             font-family: 'Bai Jamjuree';
             src: url('{{ asset('fonts/Bai_Jamjuree/BaiJamjuree-Bold.ttf') }}') format('truetype');
@@ -58,6 +62,7 @@
             font-style: normal;
             font-display: swap;
         }
+
         @font-face {
             font-family: 'SN Pro';
             src: url('{{ asset('fonts/SN_Pro/static/SNPro-Medium.ttf') }}') format('truetype');
@@ -65,6 +70,7 @@
             font-style: normal;
             font-display: swap;
         }
+
         @font-face {
             font-family: 'SN Pro';
             src: url('{{ asset('fonts/SN_Pro/static/SNPro-SemiBold.ttf') }}') format('truetype');
@@ -72,6 +78,7 @@
             font-style: normal;
             font-display: swap;
         }
+
         @font-face {
             font-family: 'SN Pro';
             src: url('{{ asset('fonts/SN_Pro/static/SNPro-Bold.ttf') }}') format('truetype');
@@ -79,6 +86,7 @@
             font-style: normal;
             font-display: swap;
         }
+
         @font-face {
             font-family: 'SN Pro';
             src: url('{{ asset('fonts/SN_Pro/static/SNPro-ExtraBold.ttf') }}') format('truetype');
@@ -86,6 +94,7 @@
             font-style: normal;
             font-display: swap;
         }
+
         @font-face {
             font-family: 'SN Pro';
             src: url('{{ asset('fonts/SN_Pro/static/SNPro-Black.ttf') }}') format('truetype');
@@ -97,9 +106,12 @@
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body style="background-image: url('{{ asset('assets/images/bg_site.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;">
+
+<body
+    style="background-image: url('{{ asset('assets/images/bg_site.png') }}'); background-size: cover; background-position: center; background-repeat: no-repeat; background-attachment: fixed;">
     <div class="container-fluid py-4">
         @yield('content')
     </div>
 </body>
+
 </html>

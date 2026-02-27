@@ -1,4 +1,4 @@
-# Transpositor de Notas
+# Symphony Lab
 
 Ferramenta web para transposição de notas musicais voltada para educação musical infantil. Permite que educadores digitem notas em Dó (tom de concerto) e visualizem instantaneamente a transposição para instrumentos em Mib e Sib.
 
